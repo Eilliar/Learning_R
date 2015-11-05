@@ -21,8 +21,13 @@ axData <- read.table("Data/Climb_stairs_MODEL/Accelerometer-2011-03-24-10-24-39-
 samples <- c(1:dim(axData)[1])
 colnames(axData) <- c("X (m/s.s)", "Y (m/s.s)", "Z (m/s.s)")
 
+# Data Frame?
+dataFrame <- data.frame(samples, axData)
+
+# Plot a single run
 par(mfrow = c(3,1))
 
-plot(samples, t(axData[1]), "l", main = "Acc. X")
-plot(samples, t(axData[2]), "l", main = "Acc. Y")
-plot(samples, t(axData[3]), "l", main = "Acc. Z")
+plot(t(dataFrame[1]), t(dataFrame[2]), "l", main = "Acc. X")
+plot(t(dataFrame[1]), t(dataFrame[3]), "l", main = "Acc. Y")
+plot(t(dataFrame[1]), t(dataFrame[4]), "l", main = "Acc. Z")
+
