@@ -1,3 +1,5 @@
+##################################################################
+
 age <- c(1,3,5,2,11,9,3,9,12,3)
 weight <- c(4.4,5.3,7.2,5.2,8.5,7.3,6.0,10.4,10.2,6.1)
 
@@ -11,7 +13,10 @@ sd(weight)
 cor(age, weight)
 
 # Plot data
-#plot(age, weight)
+dev.new()
+plot(age, weight)
+
+##################################################################
 
 # load library
 library(gdata)
@@ -25,9 +30,12 @@ colnames(axData) <- c("X (m/s.s)", "Y (m/s.s)", "Z (m/s.s)")
 dataFrame <- data.frame(samples, axData)
 
 # Plot a single run
+dev.new()
 par(mfrow = c(3,1))
 
 plot(t(dataFrame[1]), t(dataFrame[2]), "l", main = "Acc. X")
 plot(t(dataFrame[1]), t(dataFrame[3]), "l", main = "Acc. Y")
 plot(t(dataFrame[1]), t(dataFrame[4]), "l", main = "Acc. Z")
+
+##################################################################
 
